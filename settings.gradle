@@ -1,0 +1,3 @@
+include ':rectopencircleview'
+include ':app'
+rootProject.name = "LinkedRectOpenCircleView"
