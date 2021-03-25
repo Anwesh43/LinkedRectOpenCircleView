@@ -53,3 +53,19 @@ fun Canvas.drawROCNode(i : Int, scale : Float, paint : Paint) {
     paint.color = colors[i]
     drawRectOpenCircle(scale, w, h, paint)
 }
+
+class RectOpenCircleView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
