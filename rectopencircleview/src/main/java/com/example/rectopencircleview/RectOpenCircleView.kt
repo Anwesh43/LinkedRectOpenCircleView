@@ -205,4 +205,13 @@ class RectOpenCircleView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RectOpenCircleView {
+            val view : RectOpenCircleView = RectOpenCircleView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
