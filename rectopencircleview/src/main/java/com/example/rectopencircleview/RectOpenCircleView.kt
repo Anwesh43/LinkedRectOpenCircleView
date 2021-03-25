@@ -180,4 +180,28 @@ class RectOpenCircleView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : RectOpenCircleView) {
+
+        private val animator : Animator = Animator(view)
+        private val roc : RectOpenCircle = RectOpenCircle(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            roc.draw(canvas, paint)
+            animator.animate {
+                roc.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            roc.startUpdating {
+                animator.start()
+            }
+        }
+
+    }
 }
